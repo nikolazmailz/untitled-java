@@ -13,7 +13,7 @@ public class LiftOff implements Runnable{
     }
 
     public String status(){
-        return "#" + id + "(" +
+        return "taskCount #" + id + " countDown (" +
             (countDown > 0 ? countDown : "LiftOff!") + "), ";
     }
 
