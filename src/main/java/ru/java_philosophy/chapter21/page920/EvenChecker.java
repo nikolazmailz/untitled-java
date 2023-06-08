@@ -12,17 +12,20 @@ public class EvenChecker implements Runnable {
         this.generator = g;
     }
 
+    private int old = 0;
+
     @Override
     public void run() {
         int x;
         while (!generator.isCanceled()) {
             x = generator.next();
-            if (x % 2 != 0 || x > 1000) {
+            if (x % 2 != 0 || x > 100) {
                 System.out.println("Thread " + Thread.currentThread().getName());
                 System.out.println("Wow generator.next() exception rice conditions");
                 generator.cancel();
             }
-            System.out.println(x + " Thread " + Thread.currentThread().getName());
+            System.out.println(old + " / " + x + " Thread " + Thread.currentThread().getName() + " time " + System.currentTimeMillis());
+            old = x;
         }
     }
 
