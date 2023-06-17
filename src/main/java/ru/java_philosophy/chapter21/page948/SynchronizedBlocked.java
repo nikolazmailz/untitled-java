@@ -14,8 +14,8 @@ public class SynchronizedBlocked implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("Trying to call f()");
+        System.out.println("SynchronizedBlocked Trying to call f()");
         f();
-        System.out.println("Exiting SynchronizedBlocked.run()");
+        System.out.println("SynchronizedBlocked Exiting SynchronizedBlocked.run()");
     }
 }

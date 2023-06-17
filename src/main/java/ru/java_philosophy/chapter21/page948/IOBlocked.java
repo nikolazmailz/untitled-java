@@ -14,13 +14,13 @@ public class IOBlocked implements Runnable {
     @Override
     public void run() {
         try {
-            System.out.println("Wait");
+            System.out.println("IOBlocked wait");
             in.read();
         } catch (IOException e) {
             if (Thread.currentThread().isInterrupted()) {
-                System.out.println("Interrupted from blocked I/O");
+                System.out.println("IOBlocked Interrupted from blocked I/O");
             } else {
-                System.out.println("RuntimeException");
+                System.out.println("IOBlocked RuntimeException");
                throw new RuntimeException(e);
             }
         }
