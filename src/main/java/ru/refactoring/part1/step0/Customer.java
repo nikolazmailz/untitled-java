@@ -1,4 +1,4 @@
-package ru.refactoring.part1.page32;
+package ru.refactoring.part1.step0;
 
 import java.util.Enumeration;
 import java.util.Vector;

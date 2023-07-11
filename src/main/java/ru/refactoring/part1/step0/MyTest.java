@@ -1,4 +1,4 @@
-package ru.refactoring.part1.page32;
+package ru.refactoring.part1.step0;
 
 
 public class MyTest {
@@ -30,6 +30,29 @@ public class MyTest {
         System.out.println(client2.statement());
         System.out.println("\n");
         System.out.println(client3.statement());
+
+//        Прокат Client One
+//        Matrix	3.0
+//        Matrix II	2.0
+//        Matrix III	1.5
+//        Cумма задолжности: 6.5
+//        Вы заработали 3 бонусных очков
+//
+//
+//        Прокат Client Two
+//        Matrix	6.0
+//        Matrix II	3.5
+//        Matrix III	3.0
+//        Cумма задолжности: 12.5
+//        Вы заработали 4 бонусных очков
+//
+//
+//        Прокат Client Three
+//        Matrix	9.0
+//        Matrix II	5.0
+//        Matrix III	4.5
+//        Cумма задолжности: 18.5
+//        Вы заработали 4 бонусных очков
 
 
     }
