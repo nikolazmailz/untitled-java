@@ -53,5 +53,7 @@ public class Test {
         System.out.println(client2.statement().equals(s1_client2.statement()));
         System.out.println(client3.statement().equals(s1_client3.statement()));
 
+        System.out.println(s1_client1.htmlStatement());
+
     }
 }

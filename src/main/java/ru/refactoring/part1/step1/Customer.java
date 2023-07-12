@@ -26,7 +26,7 @@ public class Customer {
 
         while (rentals.hasMoreElements()){
             Rental each = (Rental) rentals.nextElement();
-            
+
             result += "\t" + each.getMovie().getTitle() + "\t" +
                 each.getCharge() + "\n";
         }
@@ -35,6 +35,21 @@ public class Customer {
             getTotalCharge() + "\n";
         result += "Вы заработали " + getTotalFrequentRenterPoint() + " бонусных очков";
         return result;
+    }
+
+    public String htmlStatement(){
+        Enumeration rentals = _rentals.elements();
+        StringBuilder result = new StringBuilder("<H1>Прокат <EM>" + getName() + "</EM></H1><P>\n");
+
+        while (rentals.hasMoreElements()){
+            Rental each = (Rental) rentals.nextElement();
+
+            result.append(each.getMovie().getTitle()).append(": ").append(each.getCharge()).append("<BR>\n");
+        }
+
+        result.append("<P>Cумма задолжности: <EM>").append(getTotalCharge()).append("</EM><P>\n");
+        result.append("Вы заработали <EM>").append(getTotalFrequentRenterPoint()).append("</EM> бонусных очков<P>");
+        return result.toString();
     }
 
     private double getTotalCharge() {
