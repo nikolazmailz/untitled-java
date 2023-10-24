@@ -61,9 +61,9 @@ public class HorseRace {
 
     public static void main(String[] args)
         throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-//        int nHorses = 7;
-//        int pause = 200;
-//        HorseRace h = new HorseRace(nHorses, pause);
+        int nHorses = 7;
+        int pause = 200;
+        HorseRace h = new HorseRace(nHorses, pause);
 
 //        Class hClass = h.getClass();
 //        Method[] methods = hClass.getDeclaredMethods();
@@ -78,25 +78,25 @@ public class HorseRace {
 //            System.out.println("method.getName() " +  method.getName());
 //        }
 
-        Lock lock = new ReentrantLock();
-        Condition condition = lock.newCondition();
-
-
-        Thread.currentThread().isAlive();
-
-
-        FutureTask futureTask = new FutureTask(new MyCallable());
-        new Thread(futureTask).start();
-        try {
-            System.out.println(futureTask.get());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-        ExecutorService exec = Executors.newCachedThreadPool();
-
-        exec.submit(new MyCallable());
+//        Lock lock = new ReentrantLock();
+//        Condition condition = lock.newCondition();
+//
+//
+//        Thread.currentThread().isAlive();
+//
+//
+//        FutureTask futureTask = new FutureTask(new MyCallable());
+//        new Thread(futureTask).start();
+//        try {
+//            System.out.println(futureTask.get());
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        } catch (ExecutionException e) {
+//            e.printStackTrace();
+//        }
+//        ExecutorService exec = Executors.newCachedThreadPool();
+//
+//        exec.submit(new MyCallable());
 
     }
 }

@@ -33,7 +33,7 @@ public class Horse implements Runnable {
                     //System.out.println("nextInt " + nextInt);
                     strides += stridesNow;
                 }
-                //System.out.println("barrier.await() " + this + " " + getStrides());
+                System.out.println("barrier.await() " + this);
                 barrier.await();
             }
         } catch (InterruptedException e) {
