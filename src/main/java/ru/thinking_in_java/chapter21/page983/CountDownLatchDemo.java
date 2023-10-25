@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 
 public class CountDownLatchDemo {
 
-    static final int SIZE = 100;
+    static final int SIZE = 10;
 
     public static void main(String[] args) {
         CountDownLatch latch = new CountDownLatch(SIZE);

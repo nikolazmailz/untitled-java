@@ -14,6 +14,7 @@ public class WaitingTask implements Runnable{
     @Override
     public void run() {
         try {
+            System.out.println("WaitingTask " + this);
             latch.await();
             System.out.println("Latch barrier passed for " + this);
         } catch (InterruptedException e) {
