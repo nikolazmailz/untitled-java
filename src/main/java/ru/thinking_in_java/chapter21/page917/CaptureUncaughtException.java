@@ -10,7 +10,7 @@ public class CaptureUncaughtException {
             new HandlerExceptionFactory()
         );
 
-        exec.execute(new ExceptionThread2());
+        exec.execute(new ExceptionRunnableImpl());
         exec.shutdown();
     }
 
