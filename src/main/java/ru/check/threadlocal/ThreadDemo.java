@@ -6,17 +6,19 @@ public class ThreadDemo implements Runnable {
     ThreadLocal<Integer> threadLocalCounter = new ThreadLocal<>();
 
     public void run() {
-        counter++;
+        synchronized (this){
+            counter++;
 
-        if(threadLocalCounter.get() != null) {
-            threadLocalCounter.set(threadLocalCounter.get() + 1);
-        } else {
-            threadLocalCounter.set(0);
         }
-        printCounters();
+        if(threadLocalCounter.get() != null) {
+                threadLocalCounter.set(threadLocalCounter.get() + 1);
+            } else {
+                threadLocalCounter.set(0);
+            }
+            printCounters();
     }
 
-    public void printCounters(){
+    public synchronized void printCounters(){
         System.out.println("Counter: " + counter);
         System.out.println("threadLocalCounter: " + threadLocalCounter.get());
     }
@@ -29,9 +31,9 @@ public class ThreadDemo implements Runnable {
         Thread t3 = new Thread(threadDemo);
 
         t1.start();
-        t1.join();
+//        t1.join();
         t2.start();
-        t2.join();
+//        t2.join();
         t3.start();
 
     }
