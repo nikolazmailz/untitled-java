@@ -17,12 +17,47 @@ public class Interrupting {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        test(new SleepBlocked());
-        test(new IOBlocked(System.in));
-        test(new SynchronizedBlocked());
-        TimeUnit.SECONDS.sleep(3);
-        System.out.println("Aborting with System.exit(0)");
-        System.exit(0);
+//        test(new SleepBlocked());
+//        test(new IOBlocked(System.in));
+//        test(new SynchronizedBlocked());
+//        TimeUnit.SECONDS.sleep(3);
+//        System.out.println("Aborting with System.exit(0)");
+//        System.exit(0);
+
+
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+
+                synchronized (this) {
+                    for (int i = 0; i < 1_000; i++) {
+
+                        System.out.println(i);
+                        try {
+                            check(Thread.currentThread().isInterrupted());
+//                        if(Thread.currentThread().isInterrupted()){
+//                            break;
+//                        }
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException("RuntimeException");
+                        }
+                    }
+                }
+            }
+
+
+            private void check(boolean b) throws InterruptedException {
+                if (b) throw new InterruptedException(" sad asd");
+            }
+        });
+
+        t.start();
+        TimeUnit.MILLISECONDS.sleep(1);
+        System.out.println("off");
+        t.interrupt();
+
+
     }
 
 }
