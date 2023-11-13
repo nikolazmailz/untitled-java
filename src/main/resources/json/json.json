@@ -1,0 +1,26 @@
+{
+  "filter": [
+    {
+      "match": {
+        "key": "category",
+        "value": "50"
+      }
+    },
+    {
+      "matchers": {
+        "key": "category",
+        "value": [
+          "51",
+          "52",
+          "60"
+        ]
+      }
+    },
+    {
+      "lessOrEquals": {
+        "key": "scoring",
+        "value": "900"
+      }
+    }
+  ]
+}

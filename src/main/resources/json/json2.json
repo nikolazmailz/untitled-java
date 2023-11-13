@@ -1,0 +1,6 @@
+{
+  "match": [{
+    "key": "category",
+    "value": "50"
+  }]
+}
