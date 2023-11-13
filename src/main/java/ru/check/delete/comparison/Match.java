@@ -15,10 +15,10 @@ public class Match extends Comparison {
     @JsonIgnore
     public String currentValue = null;
 
-//    Match(String k, String v) {
-//        key = k;
-//        value = v;
-//    }
+    Match(String k, String v) {
+        key = k;
+        value = v;
+    }
 
 
     @Override
