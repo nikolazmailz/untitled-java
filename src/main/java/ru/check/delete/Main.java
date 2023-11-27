@@ -65,6 +65,7 @@ public class Main {
         m.put("scoring", "300");
 
 
+
         Stack<String> stack = new Stack<>();
 
         comparisonList.iterator();
