@@ -1,11 +1,10 @@
-package ru;
+package ru.interview.getTopAgeForName;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.Set;
 
 /**
  * 1. Есть таблица Person(name, age). Необходимо написать запрос,

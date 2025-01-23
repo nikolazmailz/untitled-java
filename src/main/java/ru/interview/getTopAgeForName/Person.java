@@ -1,4 +1,4 @@
-package ru;
+package ru.interview.getTopAgeForName;
 
 public class Person {
     public String name;
