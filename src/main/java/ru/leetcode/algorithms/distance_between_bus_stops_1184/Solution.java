@@ -10,6 +10,30 @@ class Solution {
         new Solution().distanceBetweenBusStops(
                 new int[]{14,21,8,35,30,21,28,19,10,25,16,23,14,13,0,3,30,9}, 12, 3
         ));
+
+        System.out.println(
+                new Solution().distanceBetweenBusStops2(
+                        new int[]{14,21,8,35,30,21,28,19,10,25,16,23,14,13,0,3,30,9}, 12, 3
+                ));
+    }
+
+    public int distanceBetweenBusStops2(int[] distance, int start, int destination) {
+        int a = 5;
+        int b = 12;
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+
+        System.out.println(a);
+        System.out.println(b);
+
+        int frontSum=0;
+        int backSum=0;
+        for(int i=start;i!=destination;i=(i+1)%distance.length) {
+            frontSum+=distance[i];
+        }
+        for(int i=destination;i!=start;i=(i+1)%distance.length) backSum+=distance[i];
+        return Math.min(frontSum,backSum);
     }
 
     public int distanceBetweenBusStops(int[] distance, int start, int destination) {
